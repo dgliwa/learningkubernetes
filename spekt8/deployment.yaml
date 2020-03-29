@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spekt8
+  labels:
+    run: spekt8
+spec:
+  selector:
+    matchLabels:
+      run: spekt8
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: spekt8
+    spec:
+      containers:
+        - name: spekt8
+          image: dgliwa/spekt8:latest
+          ports:
+            - containerPort: 3000

@@ -1,0 +1,27 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  extraPortMappings:
+  - containerPort: 30000
+    hostPort: 8080
+    # optional: set the bind address on the host
+    # 0.0.0.0 is the current default
+    listenAddress: "127.0.0.1"
+  - containerPort: 30001
+    hostPort: 3001
+    # optional: set the bind address on the host
+    # 0.0.0.0 is the current default
+    listenAddress: "127.0.0.1"
+  - containerPort: 30002
+    hostPort: 3000
+    # optional: set the bind address on the host
+    # 0.0.0.0 is the current default
+    listenAddress: "127.0.0.1"
+  - containerPort: 30003
+    hostPort: 3003
+    # optional: set the bind address on the host
+    # 0.0.0.0 is the current default
+    listenAddress: "127.0.0.1"
+- role: worker
+
